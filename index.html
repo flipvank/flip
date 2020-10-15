@@ -2,29 +2,6 @@
 <!DOCTYPE html>
 
 <html><head>
-<script>
-!(function () {
-    let url = new URL(window.location.href),
-        params = url.searchParams,
-        aTags = document.getElementsByTagName('a');
-    for (let i = 0; i < aTags.length; i++) {
-        let tag = aTags[i].getAttribute('href'),
-            first = true,
-            new_url = '';
-        params.forEach(function (value, key) {
-            if (params.get(key) != null) {
-                if (first) {
-                    new_url += '?' + key + '=' + value;
-                    first = false;
-                    return;
-                }
-                new_url += '&' + key + '=' + value;
-            }
-        })
-        aTags[i].setAttribute('href', tag + new_url);
-    }
-})()
-    </script>
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
  window.OneSignal = window.OneSignal || [];
@@ -112,7 +89,29 @@ function isMob() {
     
 
 
-
+<script>
+!(function () {
+    let url = new URL(window.location.href),
+        params = url.searchParams,
+        aTags = document.getElementsByTagName('a');
+    for (let i = 0; i < aTags.length; i++) {
+        let tag = aTags[i].getAttribute('href'),
+            first = true,
+            new_url = '';
+        params.forEach(function (value, key) {
+            if (params.get(key) != null) {
+                if (first) {
+                    new_url += '?' + key + '=' + value;
+                    first = false;
+                    return;
+                }
+                new_url += '&' + key + '=' + value;
+            }
+        })
+        aTags[i].setAttribute('href', tag + new_url);
+    }
+})()
+    </script>
 
 </head>
 
