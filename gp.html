@@ -25,16 +25,14 @@
         urlParams = new URLSearchParams(window.location.search),
         new_url = '',
         first = true;
-
-
     urlParams.forEach(function (value, key) {
         if (urlParams.get(key) != null) {
             urlParams.set(key, value);
-            if (first) {
-                new_url += '?' + key + "=" + value;
-                first = false;
-              return
-            }
+            // if (first) {
+            //     new_url += '?' + key + "=" + value;
+            //     first = false;
+            //     return;
+            // }
             new_url += '&' + key + '=' + value;
         }
     });
