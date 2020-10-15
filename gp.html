@@ -33,6 +33,7 @@
             if (first) {
                 new_url += '?' + key + "=" + value;
                 first = false;
+              return
             }
             new_url += '&' + key + '=' + value;
         }
