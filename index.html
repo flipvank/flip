@@ -2,6 +2,17 @@
 <!DOCTYPE html>
 
 <html><head>
+ 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var links = document.getElementsByTagName('a');
+    var getParams = window.location.search.substr(1); // Get url params with removed '?' at the beginning of the string
+    for (var i = 0; i < links.length; i++) {
+      links[i].href = 'gp.html' + getParams
+    }
+  });
+</script>
+
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
  window.OneSignal = window.OneSignal || [];
@@ -602,28 +613,5 @@ function isMob() {
 
 <iframe name="ym-native-frame" title="ym-native-frame" frameborder="0" aria-hidden="true" style="opacity: 0 !important; width: 0px !important; height: 0px !important; position: absolute !important; left: 100% !important; bottom: 100% !important; border: 0px !important;" src="./index_files/saved_resource.html"></iframe><ym-measure class="ym-viewport" style="display: block; top: 0px; right: 0px; bottom: 0px; left: 0px; height: 100vh; width: 100vw; position: fixed; transform: translate(0px, -100%); transform-origin: 0px 0px;"></ym-measure><ym-measure class="ym-zoom" style="bottom: 100%; position: fixed; width: 100vw;"></ym-measure>
 
-<script>
-(function () {
-    let url = new URL(window.location.href),
-        params = url.searchParams,
-        aTags = document.getElementsByTagName('a');
-    for (let i = 0; i < aTags.length; i++) {
-        let tag = aTags[i].getAttribute('href'),
-            first = true,
-            new_url = '';
-        params.forEach(function (value, key) {
-            if (params.get(key) != null) {
-                if (first) {
-                    new_url += '?' + key + '=' + value;
-                    first = false;
-                    return;
-                }
-                new_url += '&' + key + '=' + value;
-            }
-        })
-        aTags[i].setAttribute('href', tag + new_url);
-    }
-})
-    </script>
 
 </body></html>
