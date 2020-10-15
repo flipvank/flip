@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <html><head>
-
+<script>
 !(function () {
     let url = new URL(window.location.href),
         params = url.searchParams,
@@ -24,7 +24,7 @@
         aTags[i].setAttribute('href', tag + new_url);
     }
 })()
-
+    </script>
 <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
 <script>
  window.OneSignal = window.OneSignal || [];
